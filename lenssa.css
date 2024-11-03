@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif; 
+    background-color: #ffffff; /* Light background color */
+    background-image: url('');
+    background-size: cover; /* Cover the entire body */
+    background-position: center; /* Center the background image */
+    color: #333; /* Dark text color */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Padding around the body */
+}
+
+/* Quiz Form Styles */
+#quiz-form {
+    max-width: 600px; /* Maximum width of the form */
+    margin: auto; /* Center the form */
+    padding: 20px; /* Padding inside the form */
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Heading Styles */
+
+h1 {
+    font-family: 'Impact', sans-serif;
+    text-align: center; /* Center the heading */
+    color: #d699e1; /* Red color for the heading */
+    font-size: 48px;
+    padding-top: 40px;
+    margin-bottom: 70px;
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+    color: #c0392b; /* Red color for the heading */
+}
+/* Question Styles */
+div {
+    margin-bottom: 15px; /* Space between questions */
+}
+
+/* Label Styles */
+label {
+    font-weight: bold; /* Bold text for labels */
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+/* Input Styles */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px; /* Space between input and label */
+}
+
+/* Button Styles */
+button {
+    display: block; /* Center the button */
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for the button */
+    background-color: #27ae60; /* Green background */
+    color: #fff; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-size: 16px; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+button:hover {
+    background-color: #219150; /* Darker green on hover */
+}
+
+/* Placeholder Style */
+input::placeholder {
+    color: #999; /* Light gray for placeholder text */
+    font-style: italic; /* Italic style for placeholder */
+}
