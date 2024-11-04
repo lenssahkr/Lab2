@@ -29,14 +29,15 @@ h1 {
     font-family: 'Impact', sans-serif;
     text-align: center; /* Center the heading */
     color: #d699e1; /* Red color for the heading */
-    font-size: 48px;
+    font-size: 60px;
     padding-top: 40px;
     margin-bottom: 70px;
 }
 
 h2 {
+    font-family: 'Impact', sans-serif;
     text-align: center; /* Center the heading */
-    color: #c0392b; /* Red color for the heading */
+    color: #494747; /* Red color for the heading */
 }
 /* Question Styles */
 div {
@@ -77,4 +78,46 @@ button:hover {
 input::placeholder {
     color: #999; /* Light gray for placeholder text */
     font-style: italic; /* Italic style for placeholder */
+}
+.details-section {
+    width: 80%; /* Justera bredd efter behov */
+    max-width: 500px;
+    margin: 20px auto; /* Centrera sektionen */
+    padding: 20px; /* Inre marginal för att ge lite luft runt text */
+    border: 2px solid #d699e1; /* Ramfärg */
+    border-radius: 10px; /* Rundade hörn */
+    background-color: #feffd2; /* Bakgrundsfärg */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+}
+.question-section {
+    width: 80%; /* Justera bredd efter behov */
+    max-width: 500px;
+    margin: 20px auto; /* Centrera sektionen */
+    padding: 20px; /* Inre marginal för att ge lite luft runt text */
+    border: 2px solid #d699e1; /* Ramfärg */
+    border-radius: 10px; /* Rundade hörn */
+    background-color: #d8fcdc; /* Bakgrundsfärg */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+}
+.button-section { 
+    padding: 8px 16px; /* Justera knappens inre marginaler (mindre knapp) */
+    font-size: 14px; /* Mindre textstorlek */
+    width: auto; /* Gör att knappen har en flexibel bredd */
+    color: #fff; /* Textfärg */
+    border: none; /* Ta bort standardram */
+    border-radius: 5px; /* Rundade hörn */
+    cursor: pointer; /* Ändra muspekaren vid hover */
+    transition: background-color 0.3s; /* Liten övergång vid hover */
+
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+input[type="text"], input[type="email"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

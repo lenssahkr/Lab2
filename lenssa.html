@@ -8,19 +8,29 @@
 </head>
 <body>
    
-    <h1>Are You a Foodie? Take the Quiz!</h1>
+    <h1>ARE YOU A FOODIE? TAKE THE QUIZ!</h1>
+
+    <div class="details-section">
+    <h2>Get Ready! Enter Your Details Below!</h2>
 
     <form id="quizForm" action="#" method="post"></form>
-        <h2>Get Ready! Enter Your Details Below!</h2>
         
+    <div class="input-group">
+
         <label for="firstName">First Name*:</label>
         <input type="text" id="firstName" name="firstName" required>
-        
+    </div>
+    <div class="input-group">
         <label for="lastName">Last Name*:</label>
         <input type="text" id="lastName" name="lastName" required>
-        
+    </div>
+    <div class="input-group">
         <label for="email">Email*:</label>
         <input type="email" id="email" name="email" required>
+    </div>
+    </form>
+</div>
+<div class="question-section">
 
         <h2>Quiz Questions</h2>
        
@@ -62,8 +72,11 @@
         <input type="checkbox" name="question5" value="c"> c) Mozzarella Cheese *(Correct Answer)*<br>
         <input type="checkbox" name="question5" value="d"> d) Basil *(Correct Answer)*<br>
     </div>
-    <button type="submit">Submit Quiz</button>
+</div>
+<div class="button-section">
 
+    <button type="submit">Submit Quiz</button>
+</div>
     <script src="lenssa.js"></script>
 </body>
 </html>
