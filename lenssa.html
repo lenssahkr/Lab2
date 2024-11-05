@@ -13,19 +13,19 @@
     <div class="details-section">
     <h2>Get Ready! Enter Your Details Below!</h2>
 
-    <form id="quizForm" action="#" method="post"></form>
+    <form id="quizForm" action="#" method="post" onsubmit="return validateForm()">
         
     <div class="input-group">
 
-        <label for="firstName">First Name*:</label>
+        <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" required>
     </div>
     <div class="input-group">
-        <label for="lastName">Last Name*:</label>
+        <label for="lastName">Last Name:</label>
         <input type="text" id="lastName" name="lastName" required>
     </div>
     <div class="input-group">
-        <label for="email">Email*:</label>
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
     </div>
     </form>
@@ -37,7 +37,7 @@
          <!-- Question 1 -->
     <div>
         <label>1. Which fruit is known as the "king of fruits" and has a strong odor?</label><br>
-        <input type="radio" name="question1" value="a"> a) Durian *(Correct Answer)*<br>
+        <input type="radio" name="question1" value="a"> a) Durian<br>
         <input type="radio" name="question1" value="b"> b) Mango<br>
         <input type="radio" name="question1" value="c"> c) Banana<br>
     </div>
@@ -46,20 +46,20 @@
      <div>
         <label>2. What type of pasta is shaped like little ears?</label><br>
         <input type="radio" name="question2" value="a"> a) Fettuccine<br>
-        <input type="radio" name="question2" value="b"> b) Orecchiette *(Correct Answer)*<br>
+        <input type="radio" name="question2" value="b"> b) Orecchiette<br>
         <input type="radio" name="question2" value="c"> c) Penne<br>
     </div>
 
     <!-- Question 3 -->
     <div>
         <label>3. Which country is known for inventing sushi?</label><br>
-        <input type="text" name="question3" placeholder="Your answer here"> *(Correct Answer: Japan)*
+        <input type="text" name="question3" placeholder="Your answer here"> 
     </div>
 
     <!-- Question 4 -->
     <div>
         <label>4. What is the main ingredient in traditional hummus?</label><br>
-        <input type="radio" name="question4" value="a"> a) Chickpeas *(Correct Answer)*<br>
+        <input type="radio" name="question4" value="a"> a) Chickpeas <br>
         <input type="radio" name="question4" value="b"> b) Lentils<br>
         <input type="radio" name="question4" value="c"> c) Peas<br>
     </div>
@@ -67,16 +67,18 @@
     <!-- Question 5 -->
     <div>
         <label>5. Which of the following are common toppings for a classic Margherita pizza? (Select all that apply)</label><br>
-        <input type="checkbox" name="question5" value="a"> a) Tomato Sauce *(Correct Answer)*<br>
+        <input type="checkbox" name="question5" value="a"> a) Tomato Sauce <br>
         <input type="checkbox" name="question5" value="b"> b) Pepperoni<br>
-        <input type="checkbox" name="question5" value="c"> c) Mozzarella Cheese *(Correct Answer)*<br>
-        <input type="checkbox" name="question5" value="d"> d) Basil *(Correct Answer)*<br>
+        <input type="checkbox" name="question5" value="c"> c) Mozzarella Cheese <br>
+        <input type="checkbox" name="question5" value="d"> d) Basil <br>
     </div>
 </div>
 <div class="button-section">
 
     <button type="submit">Submit Quiz</button>
+</form>
 </div>
+<div id="successMessage" style="display: none;">All information is entered correctly!</div>
     <script src="lenssa.js"></script>
 </body>
 </html>
