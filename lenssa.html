@@ -13,20 +13,22 @@
     <div class="details-section">
     <h2>Get Ready! Enter Your Details Below!</h2>
 
-    <form id="quizForm" action="#" method="post" onsubmit="return validateForm()">
-        
+
+    <form id="quizForm" action="#" method="post" onsubmit="return validateForm()">  
     <div class="input-group">
 
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
+        <label for="firstName">First Name: *</label>
+        <input type="text" id="firstName" name="firstName" autocomplete="given-name" required placeholder="Enter first name">
+        <div id="firstNameError" class="error-message"></div>
     </div>
     <div class="input-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
+        <label for="lastName">Last Name: *</label>
+        <input type="text" id="lastName" name="lastName" autocomplete="family-name" required placeholder="Enter last name">
+        <div id="lastNameError" class="error-message"></div>
     </div>
     <div class="input-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">Email: *</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
     </div>
     </form>
 </div>
@@ -34,48 +36,52 @@
 
         <h2>Quiz Questions</h2>
        
-         <!-- Question 1 -->
-    <div>
-        <label>1. Which fruit is known as the "king of fruits" and has a strong odor?</label><br>
-        <input type="radio" name="question1" value="a"> a) Durian<br>
-        <input type="radio" name="question1" value="b"> b) Mango<br>
-        <input type="radio" name="question1" value="c"> c) Banana<br>
-    </div>
+        <!-- Question 1 -->
+<div>
+    <label for="question1-a">1. Which fruit is known as the "king of fruits" and has a strong odor?</label><br>
+    <input type="radio" id="question1-a" name="question1" value="a"> a) Durian<br>
+    <input type="radio" id="question1-b" name="question1" value="b"> b) Mango<br>
+    <input type="radio" id="question1-c" name="question1" value="c"> c) Banana<br>
+    <div id="question1Error" class="error-message"></div>
+</div>
 
-     <!-- Question 2 -->
-     <div>
-        <label>2. What type of pasta is shaped like little ears?</label><br>
-        <input type="radio" name="question2" value="a"> a) Fettuccine<br>
-        <input type="radio" name="question2" value="b"> b) Orecchiette<br>
-        <input type="radio" name="question2" value="c"> c) Penne<br>
-    </div>
+<!-- Question 2 -->
+<div>
+    <label for="question2-a">2. What type of pasta is shaped like little ears?</label><br>
+    <input type="radio" id="question2-a" name="question2" value="a"> a) Fettuccine<br>
+    <input type="radio" id="question2-b" name="question2" value="b"> b) Orecchiette<br>
+    <input type="radio" id="question2-c" name="question2" value="c"> c) Penne<br>
+    <div id="question2Error" class="error-message"></div> 
+</div>
 
-    <!-- Question 3 -->
-    <div>
-        <label>3. Which country is known for inventing sushi?</label><br>
-        <input type="text" name="question3" placeholder="Your answer here"> 
-    </div>
+<!-- Question 3 -->
+<div>
+    <label for="question3">3. Which country is known for inventing sushi?</label><br>
+    <input type="text" id="question3" name="question3" placeholder="Your answer here"> 
+    <div id="question3Error" class="error-message"></div>
+</div>
 
-    <!-- Question 4 -->
-    <div>
-        <label>4. What is the main ingredient in traditional hummus?</label><br>
-        <input type="radio" name="question4" value="a"> a) Chickpeas <br>
-        <input type="radio" name="question4" value="b"> b) Lentils<br>
-        <input type="radio" name="question4" value="c"> c) Peas<br>
-    </div>
+<!-- Question 4 -->
+<div>
+    <label for="question4-a">4. What is the main ingredient in traditional hummus?</label><br>
+    <input type="radio" id="question4-a" name="question4" value="a"> a) Chickpeas <br>
+    <input type="radio" id="question4-b" name="question4" value="b"> b) Lentils<br>
+    <input type="radio" id="question4-c" name="question4" value="c"> c) Peas<br>
+</div>
 
-    <!-- Question 5 -->
-    <div>
-        <label>5. Which of the following are common toppings for a classic Margherita pizza? (Select all that apply)</label><br>
-        <input type="checkbox" name="question5" value="a"> a) Tomato Sauce <br>
-        <input type="checkbox" name="question5" value="b"> b) Pepperoni<br>
-        <input type="checkbox" name="question5" value="c"> c) Mozzarella Cheese <br>
-        <input type="checkbox" name="question5" value="d"> d) Basil <br>
-    </div>
+<!-- Question 5 -->
+<div>
+    <label for="question5-a">5. Which of the following are common toppings for a classic Margherita pizza? (Select all that apply)</label><br>
+    <input type="checkbox" id="question5-a" name="question5" value="a"> a) Tomato Sauce <br>
+    <input type="checkbox" id="question5-b" name="question5" value="b"> b) Pepperoni<br>
+    <input type="checkbox" id="question5-c" name="question5" value="c"> c) Mozzarella Cheese <br>
+    <input type="checkbox" id="question5-d" name="question5" value="d"> d) Basil <br>
+</div>
+
 </div>
 <div class="button-section">
 
-    <button type="submit">Submit Quiz</button>
+    <button type="submit" id="submitButton" >Submit Quiz</button>
 </form>
 </div>
 <div id="successMessage" style="display: none;">All information is entered correctly!</div>
