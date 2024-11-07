@@ -17,20 +17,22 @@
     <form id="quizForm" action="#" method="post" onsubmit="return validateForm()">  
     <div class="input-group">
 
-        <label for="firstName">First Name: *</label>
+        <label for="firstName">First Name:<span style="color: red;">*</span></label>
         <input type="text" id="firstName" name="firstName" autocomplete="given-name" required placeholder="Enter first name">
-        <div id="firstNameError" class="error-message"></div>
+        <span id="firstNameError" class="error-message"></span>
+
     </div>
     <div class="input-group">
-        <label for="lastName">Last Name: *</label>
+        <label for="lastName">Last Name:<span style="color: red;">*</span></label>
         <input type="text" id="lastName" name="lastName" autocomplete="family-name" required placeholder="Enter last name">
-        <div id="lastNameError" class="error-message"></div>
+        <span id="lastNameError" class="error-message"></span>
     </div>
     <div class="input-group">
-        <label for="email">Email: *</label>
-        <input type="email" id="email" name="email" autocomplete="email" required>
+        <label for="email">Email:<span style="color: red;">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required placeholder="Enter your email">
+        <span id="emailError" class="error-message"></span>
     </div>
-    </form>
+    <!-- </form> -->
 </div>
 <div class="question-section">
 
@@ -38,7 +40,7 @@
        
         <!-- Question 1 -->
 <div>
-    <label for="question1-a">1. Which fruit is known as the "king of fruits" and has a strong odor?</label><br>
+    <label for="question1-a">1. Which fruit is known as the "king of fruits" and has a strong odor?<span style="color: red;">*</span></label><br>
     <input type="radio" id="question1-a" name="question1" value="a"> a) Durian<br>
     <input type="radio" id="question1-b" name="question1" value="b"> b) Mango<br>
     <input type="radio" id="question1-c" name="question1" value="c"> c) Banana<br>
@@ -56,7 +58,7 @@
 
 <!-- Question 3 -->
 <div>
-    <label for="question3">3. Which country is known for inventing sushi?</label><br>
+    <label for="question3">3. Which country is known for inventing sushi?<span style="color: red;">*</span></label><br>
     <input type="text" id="question3" name="question3" placeholder="Your answer here"> 
     <div id="question3Error" class="error-message"></div>
 </div>
@@ -84,7 +86,7 @@
     <button type="submit" id="submitButton" >Submit Quiz</button>
 </form>
 </div>
-<div id="successMessage" style="display: none;">All information is entered correctly!</div>
+<div class="success-message" id="successMessage" style="display: none;">Thank you! Your answers have been submitted successfully.</div>
     <script src="lenssa.js"></script>
 </body>
 </html>

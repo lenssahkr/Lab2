@@ -1,85 +1,99 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the button and success message element by their IDs
+  
     const submitButton = document.getElementById('submitButton');
     const successMessage = document.getElementById('successMessage');
 
-    // Add an event listener to the submit button
     submitButton.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent the default form submission behavior
-        
-        // Get the first and last name inputs
+        event.preventDefault();  
+
+ 
         const firstNameInput = document.getElementById('firstName');
         const lastNameInput = document.getElementById('lastName');
         const emailInput = document.getElementById('email');
+        const question1Inputs = document.getElementsByName('question1');
+        const question3Input = document.getElementById('question3');
 
+        let isValid = true;  
 
-        // Get all form inputs
+        const letterRegex = /^[A-Za-z\s]+$/;
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
         const formInputs = document.querySelectorAll('input');
-        let isValid = true; // Assume everything is valid
-
-        // Regular expression for only letters (spaces allowed for full name)
-        const letterRegex = /^[A-Za-z\s]+$/;  // Adjusted to allow spaces in names
-
-         // Regular expression for valid email format
-         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-
-        // Clear all error messages and border colors before validating
         formInputs.forEach(input => {
-            input.style.borderColor = '';
+            input.style.borderColor = '';  
             const errorElement = document.getElementById(input.id + 'Error');
             if (errorElement) {
-                errorElement.textContent = '';  // Clear existing error messages
+                errorElement.textContent = '';  
             }
         });
 
-        // Validate first name
         if (!firstNameInput.value || !letterRegex.test(firstNameInput.value)) {
             isValid = false;
-            firstNameInput.style.borderColor = 'red'; // Highlight the input in red
+            firstNameInput.style.borderColor = 'red'; 
             document.getElementById('firstNameError').textContent = "First name is required and should only contain letters.";
         }
 
-        // Validate last name
+   
         if (!lastNameInput.value || !letterRegex.test(lastNameInput.value)) {
             isValid = false;
-            lastNameInput.style.borderColor = 'red'; // Highlight the input in red
+            lastNameInput.style.borderColor = 'red'; 
             document.getElementById('lastNameError').textContent = "Last name is required and should only contain letters.";
         }
-        // Validate email
+
+
         if (!emailInput.value || !emailRegex.test(emailInput.value)) {
             isValid = false;
-            emailInput.style.borderColor = 'red'; // Highlight the input in red
-            document.getElementById('emailError').textContent = "Please enter a valid email address (e.g., user@example.com).";
-        }
-        
-        // Loop through all inputs and check if they're filled in
-        formInputs.forEach(input => {
-            if (input.type !== 'submit' && input.required && !input.value) {
-                isValid = false;
-                input.style.borderColor = 'red';  // Highlight empty required inputs
-                const errorElement = document.getElementById(input.id + 'Error');
-                if (errorElement) {
-                    errorElement.textContent = "This field is required.";  // General error message for required fields
-                }
-            }
-        });
-
-        // If the form is valid, show the success message
-        if (isValid) {
-            successMessage.style.display = 'block'; // Show success message
+            emailInput.style.borderColor = 'red'; 
+            document.getElementById('emailError').innerHTML = "<br>Please enter a valid email address (e.g., user@example.com).";
         } else {
-            successMessage.style.display = 'none';  // Hide success message if form is not valid
-            alert("Please fill out all required fields correctly.");
+            
+            document.getElementById('emailError').textContent = '';
+        }
+
+        
+        let question1Answered = false;
+        for (let input of question1Inputs) {
+            if (input.checked) {
+                question1Answered = true;
+                break;
+            }
+        }
+        if (!question1Answered) {
+            isValid = false;
+            document.getElementById('question1Error').innerHTML = "<br>This question is required.";
+
+        } else {
+            document.getElementById('question1Error').textContent = ""; 
+        }
+
+       
+        if (!question3Input.value) {
+            isValid = false;
+            question3Input.style.borderColor = 'red';
+            document.getElementById('question3Error').innerHTML = "<br>This question is required.";
+
+        } else {
+            question3Input.style.borderColor = '';
+            document.getElementById('question3Error').textContent = ""; 
+        }
+
+     
+        if (isValid) {
+            successMessage.style.display = 'block'; 
+        } else {
+            successMessage.style.display = 'none'; 
+          
         }
     });
 });
 
 
+
 function validateForm() {
     console.log("validateForm function was called");
 
-    // Clear previous error messages
+ 
     document.getElementById('firstNameError').textContent = '';
     document.getElementById('lastNameError').textContent = '';
     document.getElementById('emailError').textContent = '';
@@ -87,7 +101,7 @@ function validateForm() {
     document.getElementById('question2Error').textContent = '';
     document.getElementById('question3Error').textContent = '';
 
-    // Get form values
+
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -97,25 +111,25 @@ function validateForm() {
 
     let isValid = true;
 
-    // Validate first name (letters only)
+    
     if (!/^[a-zA-Z]+$/.test(firstName)) {
         document.getElementById('firstNameError').textContent = 'First name is required and must contain only letters.';
         isValid = false;
     }
 
-    // Validate last name (letters only)
+    
     if (!/^[a-zA-Z]+$/.test(lastName)) {
         document.getElementById('lastNameError').textContent = 'Last name is required and must contain only letters.';
         isValid = false;
     }
 
-    // Validate email format
+
     if (!/^\S+@\S+\.\S+$/.test(email)) {
         document.getElementById('emailError').textContent = 'Please enter a valid email address.';
         isValid = false;
     }
 
-    // Validate required quiz questions
+    
     if (!question1) {
         document.getElementById('question1Error').textContent = 'Please answer question 1.';
         isValid = false;
@@ -129,12 +143,12 @@ function validateForm() {
         isValid = false;
     }
 
-    // Show success message if form is valid
+   
     if (isValid) {
         document.getElementById('successMessage').style.display = 'block';
-        return true;  // Allow form submission
+        return true;  
     } else {
         document.getElementById('successMessage').style.display = 'none';
-        return false;  // Prevent form submission
+        return false;  
     }
 }
