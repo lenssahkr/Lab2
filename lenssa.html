@@ -32,7 +32,7 @@
         <input type="email" id="email" name="email" autocomplete="email" required placeholder="Enter your email">
         <span id="emailError" class="error-message"></span>
     </div>
-    <!-- </form> -->
+    
 </div>
 <div class="question-section">
 
@@ -49,17 +49,17 @@
 
 <!-- Question 2 -->
 <div>
-    <label for="question2-a">2. What type of pasta is shaped like little ears?</label><br>
-    <input type="radio" id="question2-a" name="question2" value="a"> a) Fettuccine<br>
-    <input type="radio" id="question2-b" name="question2" value="b"> b) Orecchiette<br>
-    <input type="radio" id="question2-c" name="question2" value="c"> c) Penne<br>
+    <label for="question2-a">2. What type of pasta is shaped like little ears?<span style="color: red;">*</span></label><br>
+    <input type="radio" id="question2-a" name="question2" value="a" required> a) Fettuccine<br>
+    <input type="radio" id="question2-b" name="question2" value="b" required> b) Orecchiette<br>
+    <input type="radio" id="question2-c" name="question2" value="c" required> c) Penne<br>
     <div id="question2Error" class="error-message"></div> 
 </div>
 
 <!-- Question 3 -->
 <div>
     <label for="question3">3. Which country is known for inventing sushi?<span style="color: red;">*</span></label><br>
-    <input type="text" id="question3" name="question3" placeholder="Your answer here"> 
+    <input type="text" id="question3" name="question3" placeholder="Your answer here" required> 
     <div id="question3Error" class="error-message"></div>
 </div>
 

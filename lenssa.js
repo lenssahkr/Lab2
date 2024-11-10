@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastNameInput = document.getElementById('lastName');
         const emailInput = document.getElementById('email');
         const question1Inputs = document.getElementsByName('question1');
+        const question2Inputs = document.getElementsByName('question2');
         const question3Input = document.getElementById('question3');
 
         let isValid = true;  
@@ -51,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('emailError').textContent = '';
         }
 
-        
+        // Question 1 
+
         let question1Answered = false;
         for (let input of question1Inputs) {
             if (input.checked) {
@@ -67,6 +69,23 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('question1Error').textContent = ""; 
         }
 
+        // Question 2
+
+        let question2Answered = false;
+        for (let input of question2Inputs) {
+            if (input.checked) {
+                question2Answered = true;
+                break;
+            }
+        }
+        if (!question2Answered) {
+            isValid = false;
+            document.getElementById('question2Error').innerHTML = "<br>This question is required.";  
+        } else {
+            document.getElementById('question2Error').textContent = ""; 
+        }
+
+       // Question 3
        
         if (!question3Input.value) {
             isValid = false;
